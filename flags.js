@@ -69,7 +69,7 @@ input.onkeydown = function(e){
     if(e.keyCode == 13 && this.value.length > 0){
         let answer = filter_noun(flags[current_flag]);
         let guess = filter_noun(this.value);
-        let good_guess = similarity(answer, guess) >= 0.9;
+        let good_guess = similarity(answer, guess) >= 0.85;
         document.querySelector("#answer").innerHTML = "The answer was "+flags[current_flag];
         document.querySelector("#answer").style.color = good_guess ? "green" : "red";
         this.value = "";
